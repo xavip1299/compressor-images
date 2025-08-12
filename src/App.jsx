@@ -246,8 +246,6 @@ export default function App() {
     <div className="app">
       {/* Header */}
       <header className="app-header">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2459527561207315"
-     crossorigin="anonymous"></script>  
         <div className="logo">IC</div>
         <h1>Image Compressor</h1>
         <nav className="nav">
