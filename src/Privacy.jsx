@@ -5,6 +5,11 @@ export default function Privacy() {
     <div className="legal-page">
       <div className="container">
         <div className="legal-content">
+          <div style={{ marginBottom: '2rem' }}>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.history.back(); }} style={{ color: '#0066cc', textDecoration: 'none', fontSize: '1rem' }}>
+              ← Back to Compressor
+            </a>
+          </div>
           <h1>Privacy Policy</h1>
           <p className="last-updated">Last updated: August 13, 2025</p>
           
@@ -60,16 +65,32 @@ export default function Privacy() {
               We use Plausible Analytics for privacy-friendly website analytics. Unlike Google Analytics, 
               Plausible doesn't use cookies, doesn't track users across websites, and is fully GDPR compliant.
               <br />
-              <a href="https://plausible.io/privacy" target="_blank" rel="noopener">View Plausible's Privacy Policy</a>
+              <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">View Plausible's Privacy Policy</a>
             </p>
 
-            <h3>Google AdSense (Optional)</h3>
+            <h3>Google AdSense</h3>
             <p>
-              Our website may display advertisements through Google AdSense. Google may use cookies to serve 
-              ads based on your visits to this and other websites.
-              <br />
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View Google's Privacy Policy</a>
+              Our website displays advertisements through Google AdSense to support this free service. 
+              Third parties, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.
             </p>
+            <p>
+              Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit 
+              to this site and/or other sites on the Internet. Users may opt out of personalized advertising by visiting 
+              <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Ads Settings</a>.
+            </p>
+            <p>
+              For more information about how Google uses data when you use our site, please visit: <br />
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">
+                How Google uses information from sites or apps that use our services
+              </a>
+            </p>
+            <p>
+              Additional resources:
+            </p>
+            <ul>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+              <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">How Google uses cookies in advertising</a></li>
+            </ul>
 
             <h3>Affiliate Links</h3>
             <p>

@@ -7,6 +7,26 @@ import React, {
 } from "react";
 import "./styles.css";
 import { AdBanner, RecommendedTools } from "./AdBanner.jsx"; // named exports
+import Privacy from "./Privacy.jsx";
+import About from "./About.jsx";
+
+// Simple router
+function useRouter() {
+  const [path, setPath] = useState(window.location.pathname);
+  
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+  
+  const navigate = (newPath) => {
+    window.history.pushState({}, '', newPath);
+    setPath(newPath);
+  };
+  
+  return { path, navigate };
+}
 
 // ---------- utils ----------
 function formatBytes(bytes) {
@@ -37,6 +57,16 @@ const PRESETS = [
 ];
 
 export default function App() {
+  const { path, navigate } = useRouter();
+
+  // Route rendering
+  if (path === '/privacy') {
+    return <Privacy />;
+  }
+  if (path === '/about') {
+    return <About />;
+  }
+
   // files & results
   const [files, setFiles] = useState([]); // File[]
   const [results, setResults] = useState([]); // [{name, blob, previewUrl, originalSize, newSize, width, height, type}]
@@ -454,6 +484,8 @@ export default function App() {
           <a href="#how-it-works">How it works</a>
           <a href="#faq">FAQ</a>
           <a href="#pro">Pro</a>
+          <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('/privacy'); }}>Privacy Policy</a>
+          <a href="/about" onClick={(e) => { e.preventDefault(); navigate('/about'); }}>About</a>
         </div>
       </footer>
     </div>

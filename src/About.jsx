@@ -5,6 +5,11 @@ export default function About() {
     <div className="legal-page">
       <div className="container">
         <div className="legal-content">
+          <div style={{ marginBottom: '2rem' }}>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.history.back(); }} style={{ color: '#0066cc', textDecoration: 'none', fontSize: '1rem' }}>
+              ← Back to Compressor
+            </a>
+          </div>
           <h1>About Image Compressor</h1>
           
           <section>
